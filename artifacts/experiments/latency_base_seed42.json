@@ -1,0 +1,37 @@
+{
+  "warm_events": 8181,
+  "timed_events": 2000,
+  "modes": {
+    "score_only": {
+      "mean_ms": 0.013,
+      "p50_ms": 0.0117,
+      "p95_ms": 0.02,
+      "p99_ms": 0.0344,
+      "max_ms": 0.2132
+    },
+    "score_and_update": {
+      "mean_ms": 0.0136,
+      "p50_ms": 0.0123,
+      "p95_ms": 0.0202,
+      "p99_ms": 0.0359,
+      "max_ms": 0.0603
+    },
+    "score_update_explain": {
+      "mean_ms": 0.0197,
+      "p50_ms": 0.0172,
+      "p95_ms": 0.0311,
+      "p99_ms": 0.052,
+      "max_ms": 0.114
+    }
+  },
+  "hardware": {
+    "platform": "Linux-6.18.44-fc-v114-x86_64-with-glibc2.39",
+    "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz",
+    "logical_cpus": 1,
+    "python": "3.12.3"
+  },
+  "excludes": "HTTP/serialization, database writes, cluster detection, process startup",
+  "measured_at": "2026-10-11T16:07:38Z",
+  "dataset": "SYNTHETIC scenario=base seed=42",
+  "params": "algorithm defaults + FG_ATFRP_* overrides (latency does not depend on fitted weights)"
+}

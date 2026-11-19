@@ -1,0 +1,15 @@
+# NOTE: written but not verified (no Docker in the authoring sandbox).
+services:
+  backend:
+    build: ./backend
+    env_file: .env
+    environment:
+      FG_DATA_DIR: /data
+      FG_ARTIFACT_DIR: /artifacts
+      FG_DB_AUTO_CREATE: "false"   # schema managed by `alembic upgrade head` (run by the container command)
+    volumes: ["./data:/data", "./artifacts:/artifacts"]
+    healthcheck: {test: ["CMD", "python", "-c", "import urllib.request;urllib.request.urlopen('http://localhost:8000/health')"], interval: 10s}
+  frontend:
+    build: ./frontend
+    ports: ["8080:80"]
+    depends_on: [backend]

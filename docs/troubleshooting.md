@@ -1,0 +1,14 @@
+# Troubleshooting
+- **409 "No dataset loaded"**: `POST /api/v1/demo/load` (or use the Overview button) or upload a dataset first.
+- **503 "FG_API_KEY not configured"**: start the API with `FG_API_KEY=yourkey`; enter the same key in the UI forms.
+- **401 invalid API key**: the key typed in the UI differs from the server's `FG_API_KEY`.
+- **`ModuleNotFoundError: app`**: run from `backend/` (`python3 -m uvicorn app.main:app`, `python3 -m app.ml.experiment`) or set `PYTHONPATH=.`.
+- **Upload job `failed`**: read `error` in the job; common causes are missing `TransactionID/TransactionDT/TransactionAmt/card1` columns.
+- **Large datasets are slow / memory heavy**: ingestion and scoring are in-memory Python and untested at IEEE-CIS scale; upload tunes tau (4 extra fits) so expect long jobs. State resets on restart.
+- **`npm install` hangs**: on slow or mounted filesystems install on a local disk; check registry access.
+- **Graph page empty**: entity IDs are account proxies (e.g. `ring0_0` in the demo); pick a cluster from the side panel.
+- **Docker**: compose files are unverified; requires `FG_API_KEY` in `.env`.
+- **`/ready` returns 503 with `FG_DB_AUTO_CREATE=false`**: run `cd backend && alembic upgrade head` (Docker does this at container start).
+- **Alembic can't find settings/DB**: it reads `FG_DATABASE_URL` from the environment (same as the app); run it from `backend/`.
+- **429 rate limit exceeded / too many failed authentication attempts**: wait for `Retry-After` seconds; raise or disable (`0`) `FG_RATE_LIMIT_*` / `FG_AUTH_FAIL_LIMIT` if legitimate traffic is blocked. Limits are per process and per client IP (set `FG_TRUST_PROXY=true` only behind a trusted proxy).
+- **403 requires the admin role**: you used the analyst key for config, upload or experiment actions.

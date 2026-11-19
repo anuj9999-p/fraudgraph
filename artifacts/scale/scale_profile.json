@@ -1,0 +1,278 @@
+{
+  "hardware": {
+    "platform": "Linux-6.18.44-fc-v114-x86_64-with-glibc2.39",
+    "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz",
+    "logical_cpus": 1,
+    "python": "3.12.3"
+  },
+  "note": "synthetic data; one run per size; stage seconds are per-stage durations; peak_rss_mb is the process peak so far",
+  "runs": [
+    {
+      "n_accounts": 250,
+      "generate": {
+        "seconds": 0.03,
+        "peak_rss_mb": 166.5
+      },
+      "rows": 10227,
+      "ingest_csv": {
+        "seconds": 0.07,
+        "peak_rss_mb": 173.9
+      },
+      "build_events": {
+        "seconds": 0.09,
+        "peak_rss_mb": 174.3
+      },
+      "one_replay": {
+        "seconds": 0.14,
+        "peak_rss_mb": 178.2
+      },
+      "fit_atfrp_scores": {
+        "seconds": 0.81,
+        "peak_rss_mb": 184.4
+      },
+      "state_load_df_no_tune": {
+        "seconds": 0.75,
+        "peak_rss_mb": 184.9
+      },
+      "clusters_found": 3
+    },
+    {
+      "n_accounts": 1200,
+      "generate": {
+        "seconds": 0.21,
+        "peak_rss_mb": 186.3
+      },
+      "rows": 48044,
+      "ingest_csv": {
+        "seconds": 0.24,
+        "peak_rss_mb": 209.8
+      },
+      "build_events": {
+        "seconds": 0.25,
+        "peak_rss_mb": 209.8
+      },
+      "one_replay": {
+        "seconds": 1.11,
+        "peak_rss_mb": 226.7
+      },
+      "fit_atfrp_scores": {
+        "seconds": 4.13,
+        "peak_rss_mb": 251.5
+      },
+      "state_load_df_no_tune": {
+        "seconds": 4.25,
+        "peak_rss_mb": 251.6
+      },
+      "clusters_found": 3
+    },
+    {
+      "n_accounts": 5000,
+      "generate": {
+        "seconds": 0.69,
+        "peak_rss_mb": 268.7
+      },
+      "rows": 199518,
+      "ingest_csv": {
+        "seconds": 1.18,
+        "peak_rss_mb": 324.0
+      },
+      "build_events": {
+        "seconds": 1.2,
+        "peak_rss_mb": 329.7
+      },
+      "one_replay": {
+        "seconds": 5.49,
+        "peak_rss_mb": 406.3
+      },
+      "fit_atfrp_scores": {
+        "seconds": 25.66,
+        "peak_rss_mb": 505.7
+      },
+      "state_load_df_no_tune": {
+        "seconds": 24.32,
+        "peak_rss_mb": 505.8
+      },
+      "clusters_found": 3
+    },
+    {
+      "n_accounts": 14000,
+      "generate": {
+        "seconds": 1.88,
+        "peak_rss_mb": 464.1
+      },
+      "rows": 559885,
+      "ingest_csv": {
+        "seconds": 3.41,
+        "peak_rss_mb": 627.2
+      },
+      "build_events": {
+        "seconds": 3.11,
+        "peak_rss_mb": 627.2
+      },
+      "one_replay": {
+        "seconds": 11.56,
+        "peak_rss_mb": 761.3
+      },
+      "fit_atfrp_scores": {
+        "seconds": 53.18,
+        "peak_rss_mb": 1070.8
+      },
+      "state_load_df_no_tune": {
+        "seconds": 56.19,
+        "peak_rss_mb": 1070.9
+      },
+      "clusters_found": 3
+    }
+  ],
+  "tune_run_48k": {
+    "n_accounts": 1200,
+    "generate": {
+      "seconds": 0.22,
+      "peak_rss_mb": 186.3
+    },
+    "rows": 48044,
+    "ingest_csv": {
+      "seconds": 0.31,
+      "peak_rss_mb": 209.6
+    },
+    "build_events": {
+      "seconds": 0.4,
+      "peak_rss_mb": 209.6
+    },
+    "one_replay": {
+      "seconds": 0.84,
+      "peak_rss_mb": 226.6
+    },
+    "fit_atfrp_scores": {
+      "seconds": 5.39,
+      "peak_rss_mb": 251.4
+    },
+    "tune_lam_4_taus": {
+      "seconds": 18.0,
+      "peak_rss_mb": 251.4
+    },
+    "state_load_df_no_tune": {
+      "seconds": 4.7,
+      "peak_rss_mb": 251.6
+    },
+    "clusters_found": 3
+  },
+  "before_replay_sharing": [
+    {
+      "n_accounts": 250,
+      "generate": {
+        "seconds": 0.03,
+        "peak_rss_mb": 166.1
+      },
+      "rows": 10227,
+      "ingest_csv": {
+        "seconds": 0.06,
+        "peak_rss_mb": 173.8
+      },
+      "build_events": {
+        "seconds": 0.08,
+        "peak_rss_mb": 173.8
+      },
+      "one_replay": {
+        "seconds": 0.12,
+        "peak_rss_mb": 177.5
+      },
+      "fit_atfrp_scores": {
+        "seconds": 0.89,
+        "peak_rss_mb": 182.6
+      },
+      "state_load_df_no_tune": {
+        "seconds": 1.39,
+        "peak_rss_mb": 186.8
+      },
+      "clusters_found": 3
+    },
+    {
+      "n_accounts": 1200,
+      "generate": {
+        "seconds": 0.18,
+        "peak_rss_mb": 186.2
+      },
+      "rows": 48044,
+      "ingest_csv": {
+        "seconds": 0.24,
+        "peak_rss_mb": 209.5
+      },
+      "build_events": {
+        "seconds": 0.24,
+        "peak_rss_mb": 209.5
+      },
+      "one_replay": {
+        "seconds": 0.85,
+        "peak_rss_mb": 226.4
+      },
+      "fit_atfrp_scores": {
+        "seconds": 5.23,
+        "peak_rss_mb": 244.8
+      },
+      "state_load_df_no_tune": {
+        "seconds": 7.71,
+        "peak_rss_mb": 266.3
+      },
+      "clusters_found": 3
+    },
+    {
+      "n_accounts": 5000,
+      "generate": {
+        "seconds": 0.69,
+        "peak_rss_mb": 268.2
+      },
+      "rows": 199518,
+      "ingest_csv": {
+        "seconds": 0.92,
+        "peak_rss_mb": 325.1
+      },
+      "build_events": {
+        "seconds": 1.05,
+        "peak_rss_mb": 330.8
+      },
+      "one_replay": {
+        "seconds": 4.73,
+        "peak_rss_mb": 407.5
+      },
+      "fit_atfrp_scores": {
+        "seconds": 27.01,
+        "peak_rss_mb": 479.0
+      },
+      "state_load_df_no_tune": {
+        "seconds": 38.76,
+        "peak_rss_mb": 570.2
+      },
+      "clusters_found": 3
+    },
+    {
+      "n_accounts": 14000,
+      "generate": {
+        "seconds": 1.87,
+        "peak_rss_mb": 463.0
+      },
+      "rows": 559885,
+      "ingest_csv": {
+        "seconds": 2.95,
+        "peak_rss_mb": 617.8
+      },
+      "build_events": {
+        "seconds": 3.17,
+        "peak_rss_mb": 617.8
+      },
+      "one_replay": {
+        "seconds": 10.17,
+        "peak_rss_mb": 751.5
+      },
+      "fit_atfrp_scores": {
+        "seconds": 59.77,
+        "peak_rss_mb": 971.6
+      },
+      "state_load_df_no_tune": {
+        "seconds": 92.07,
+        "peak_rss_mb": 1226.3
+      },
+      "clusters_found": 3
+    }
+  ]
+}
