@@ -3,7 +3,7 @@
 Adaptive Temporal Graph-Based Financial Fraud Detection, built around **ATFRP** (Adaptive Temporal Fraud-Risk Propagation).
 Authors: Anuj Shukla (24BCE0314),  Decision-support research prototype: it does not block transactions, and a high score is not confirmed fraud.
 
-## Status (honest)
+## Status
 Working: ATFRP engine, synthetic data, chronological experiment (baselines, ablations, metrics), clusters, evidence-based explanations,
 FastAPI backend, IEEE-CIS ingestion + upload jobs, React frontend (Overview, Transactions, Graph, Investigations, Model Lab, Datasets, Config).
 Not built yet: per-user accounts/SSO, verified Postgres, a full IEEE-CIS run, in-memory scores/graph (cases and jobs persist).
